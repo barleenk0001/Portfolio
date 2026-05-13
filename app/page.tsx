@@ -16,7 +16,7 @@ export default function Home() {
           Portfolio
         </p>
         <h1 className="mb-6 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Designing and developing mobile experiences with clarity and motion Hi
+          Designing and developing mobile experiences with clarity and motion
         </h1>
         <p className="mb-10 max-w-xl text-lg text-muted">
           React Native developer specializing in modern UI and product visuals.

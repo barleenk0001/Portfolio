@@ -56,7 +56,7 @@ export function MarqueeRow({ ariaHidden }: { ariaHidden?: boolean }) {
         className={`${cardShell} rounded-tr-[100px] rounded-bl-[100px] bg-white ring-1 ring-[color:var(--border-subtle)]`}
       >
         <Image
-          src="/chat.png"
+          src="/Chat.png"
           alt="Match app"
           fill
           className="object-cover"
