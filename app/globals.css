@@ -60,6 +60,37 @@ body {
   will-change: transform;
 }
 
+/* Classic “drop from above” — needs ancestors with overflow-y visible (not overflow-hidden) */
+@keyframes drop-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -72px, 0);
+  }
+  58% {
+    opacity: 1;
+    transform: translate3d(0, 12px, 0);
+  }
+  78% {
+    transform: translate3d(0, -6px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-drop-in {
+  animation: drop-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drop-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .bg-showcase-gradient {
   background: radial-gradient(
       ellipse 120% 80% at 50% -20%,

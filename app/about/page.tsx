@@ -22,13 +22,13 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-background px-4 py-10 sm:px-6 sm:py-14">
-        <div className="marquee-strip mx-auto max-w-6xl p-4 sm:p-5 md:p-6">
-          <div className="marquee-strip-inner overflow-hidden py-5 sm:py-6">
+        <div className="marquee-strip mx-auto max-w-8xl p-2 sm:p-5 md:p-6 overflow-hidden">
+          {/* <div className="marquee-strip-inner overflow-hidden py-5 sm:py-6"> */}
             <div className="flex w-max animate-marquee gap-3">
               <MarqueeRow />
               <MarqueeRow ariaHidden />
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </section>
     </div>
