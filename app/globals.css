@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
+/* Light portfolio — mint / cool sky surfaces, teal accent */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f9f8;
+  --foreground: #1a2624;
+  --muted: #5a6d68;
+  --surface: #e6f0ed;
+  --surface-elevated: #ffffff;
+  --card-dark: #3d5652;
+  --accent: #0f766e;
+  --accent-soft: #0d9488;
+  --accent-glow: rgba(15, 118, 110, 0.18);
+  --gradient-cream: #fafcfb;
+  --gradient-mist: #eef6f3;
+  --gradient-frost: #e5f1ed;
+  --gradient-sky: #dfeef5;
+  --border-subtle: rgba(15, 118, 110, 0.22);
+  --mask-fade: rgba(248, 252, 251, 0.92);
+  --marquee-strip-from: #eef8f5;
+  --marquee-strip-via: #e5f3f7;
+  --marquee-strip-to: #e0eef6;
+  --marquee-strip-border: rgba(13, 148, 136, 0.26);
+  --marquee-strip-shadow: rgba(13, 100, 95, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.bg-showcase-gradient {
+  background: radial-gradient(
+      ellipse 120% 80% at 50% -20%,
+      rgba(20, 184, 166, 0.12),
+      transparent 58%
+    ),
+    linear-gradient(
+      145deg,
+      var(--gradient-cream) 0%,
+      var(--gradient-mist) 38%,
+      var(--gradient-frost) 72%,
+      var(--gradient-sky) 100%
+    );
+}
+
+.marquee-strip {
+  background: linear-gradient(
+    165deg,
+    var(--marquee-strip-from) 0%,
+    var(--marquee-strip-via) 45%,
+    var(--marquee-strip-to) 100%
+  );
+  /* border: 1.5px solid var(--marquee-strip-border); */
+  /* border-radius: 2rem; */
+  /* box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.85) inset,
+    0 10px 36px -6px var(--marquee-strip-shadow),
+    0 2px 8px rgba(40, 80, 90, 0.06); */
+}
+
+.marquee-strip-inner {
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
